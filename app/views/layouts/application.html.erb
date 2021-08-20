@@ -9,11 +9,27 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
   <body>
-    <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+  
+    <nav>
 
+      
+      <% if user_signed_in?%>
+      
+          <%= link_to "Sign out", destroy_user_session_url, method: "delete" %>
+
+          <%= link_to "Profile", edit_user_registration_url %>
+
+      <% else %>
+      
+        <%= link_to "Sign in", new_user_session_url %>
+        <%= link_to "Sign up", new_user_registration_url %>
+
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>
