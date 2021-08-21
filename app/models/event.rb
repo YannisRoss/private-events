@@ -1,8 +1,8 @@
 class Event < ApplicationRecord
 
     belongs_to :user
-    has_many :invitees, through: :event_invites, source: :invitee
-    has_many :event_invites , foreign_key: :invited_event_id
-    
+    has_many :attendees, through: :event_attendances, source: :attendee
+    has_many :event_attendances , foreign_key: :event_attendance_id
+     
 
 end
