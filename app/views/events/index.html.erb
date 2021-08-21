@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @events.each do |event| %>
+    <% @events.order('event_date DESC').each do |event| %>
       <tr>
         <td><%= event.event_date %></td>
         <td><%= event.title %></td>
