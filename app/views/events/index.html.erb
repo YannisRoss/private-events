@@ -18,9 +18,9 @@
         <td><%= event.event_date %></td>
         <td><%= event.title %></td>
         <td><%= event.user.name %></td>
+        <td><%= link_to 'Show', event %></td>
 
-        <% if user_signed_in? %>
-          <td><%= link_to 'Show', event %></td>
+        <% if user_signed_in? && current_user == event.user %>
           <td><%= link_to 'Edit', edit_event_path(event) %></td>
           <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
