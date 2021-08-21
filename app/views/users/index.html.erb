@@ -1,0 +1,16 @@
+<h1>    <%= @user.name %>   </h1>
+
+
+<p>
+<% i = 0 %>
+<p>Your events:</p>
+
+    <% while i <= @user.events.size%>
+        <% unless @user.events[i].nil?%>
+            <%= @user.events[i].title%>
+            <br>
+        <%end%>
+            <% i += 1%>
+
+    <%end%>
+</p>

@@ -2,10 +2,11 @@ class UsersController < ApplicationController
 
     def index
         @users = User.all
+        @user = current_user
     end
     
     def show
-        current_user.events.all
+        @user = User.find(params[:id])
     end
     
     def new
