@@ -23,7 +23,9 @@
 
           <%= link_to "#{current_user.name}", edit_user_registration_url %>
 
-          <%= link_to "My events", 'users#show' %>
+          <%= link_to "My created events", 'users#show' %>
+          <%= link_to "My attended events", 'event_attendances#index' %>
+
 
 
       <% else %>
