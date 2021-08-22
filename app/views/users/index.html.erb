@@ -3,14 +3,28 @@
 
 <p>
 <% i = 0 %>
-<p>Your events:</p>
 
-    <% while i <= @user.events.size%>
-        <% unless @user.events[i].nil?%>
-            <%= @user.events[i].title%>
-            <br>
-        <%end%>
-            <% i += 1%>
 
-    <%end%>
-</p>
+<table>
+  <thead>
+    <tr>
+      <th>Event date</th>
+      <th>Title</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.events.order('event_date DESC').each do |event| %>
+      <tr>
+        <td><%= event.event_date %></td>
+        <td><%= event.title %></td>
+        <td><%= link_to 'Show', event %></td>
+
+          <td><%= link_to 'Edit', edit_event_path(event) %></td>
+          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
