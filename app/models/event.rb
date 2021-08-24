@@ -5,4 +5,7 @@ class Event < ApplicationRecord
     has_many :attendees, through: :event_attendances, foreign_key: "user_id", source: :user
      
 
+    scope :future, -> { where("event_date > CURRENT_TIMESTAMP")} 
+    scope :past, -> { where("event_date < CURRENT_TIMESTAMP")} 
+
 end
