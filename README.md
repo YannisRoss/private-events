@@ -6,3 +6,9 @@ A user can create events. A user can attend many events. An event can be attende
 
 
 Part of TheOdinProject's Ruby on Rails curriculum: https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/associations
+
+
+Users can create events for other people to attend.
+Users can see what events they are attending.
+Users can delete or edit their own events, but not others'.
+Users can set up secure accounts.
